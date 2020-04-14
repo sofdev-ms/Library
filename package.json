@@ -13,21 +13,25 @@
   "dependencies": {
     "chalk": "4.0.0",
     "debug": "4.1.1",
+    "ejs": "3.0.2",
     "express": "^4.17.1",
     "morgan": "1.10.0",
-    "nodemon": "2.0.3"
+    "nodemon": "2.0.3",
+    "pug": "2.0.4"
   },
   "devDependencies": {
     "eslint": "6.8.0",
     "eslint-config-airbnb-base": "14.1.0",
     "eslint-plugin-import": "2.20.2"
   },
-  "nodemonConfig":{
-    "restartable":"rs",
-    "ignore":["node_modules/**/node_modules"],
+  "nodemonConfig": {
+    "restartable": "rs",
+    "ignore": [
+      "node_modules/**/node_modules"
+    ],
     "delay": "2500",
-    "env":{
-      "NODE_ENV" : "dev",
+    "env": {
+      "NODE_ENV": "dev",
       "PORT": 4000
     }
   }
