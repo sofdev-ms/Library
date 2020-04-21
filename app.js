@@ -4,6 +4,7 @@ const debug = require('debug')('app');
 const morgan = require('morgan');
 const path = require('path');
 const bookRouter = require('./src/routes/bookRoutes');
+const adminRouter = require('./src/routes/adminRoutes')();
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -16,6 +17,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 app.set('views', './src/views');
 app.set('view engine', 'ejs');
 app.use('/books', bookRouter);
+app.use('/admin', adminRouter);
 
 app.get('/', (req, res) => {
   // res.sendFile(path.join(__dirname, 'views/index.html'));
