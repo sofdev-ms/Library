@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "0.19.2",
     "body-parser": "1.19.0",
     "chalk": "4.0.0",
     "cookie-parser": "1.4.5",
@@ -23,7 +24,8 @@
     "nodemon": "2.0.3",
     "passport": "0.4.1",
     "passport-local": "1.0.0",
-    "pug": "2.0.4"
+    "pug": "2.0.4",
+    "xml2js": "0.4.23"
   },
   "devDependencies": {
     "eslint": "6.8.0",
