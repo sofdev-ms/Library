@@ -4,6 +4,13 @@ const { MongoClient, ObjectID } = require('mongodb');
 
 const bookRouter = express.Router();
 
+bookRouter.use((req, res, next) => {
+  if (req.user) {
+    next();
+  } else {
+    res.redirect('/');
+  }
+});
 bookRouter.route('/')
   .get((req, res) => {
     const url = 'mongodb://localhost:27017';
@@ -23,7 +30,8 @@ bookRouter.route('/')
           'books',
           {
             nav: [{ link: '/books', title: 'Books' },
-              { link: '/authors', title: 'Authors' }],
+              { link: '/authors', title: 'Authors' },
+              { link: '/auth/logout', title: 'Logout' }],
             title: 'Library',
             books
           }
@@ -54,7 +62,8 @@ bookRouter.route('/:id')
           'book',
           {
             nav: [{ link: '/books', title: 'Books' },
-              { link: '/authors', title: 'Authors' }],
+              { link: '/authors', title: 'Authors' },
+              { link: '/auth/logout', title: 'Logut' }],
             title: 'Library',
             book
           }
